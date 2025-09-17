@@ -27,7 +27,7 @@ function loadBooks() {
 function renderBooks(books) {
   // Build once → inject once (fast & clean)
   const html = books.map(b => `
-    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+    <div class="book-col col-12 col-sm-6 col-lg-4 col-xl-3">
       <div class="card h-100 shadow-sm">
         <img
           src="${b.img}"
@@ -53,6 +53,5 @@ function renderBooks(books) {
 row.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-action="discard"]');
   if (!btn) return;
-  btn.closest('.book-col')?.remove();
+  btn.closest('.book-col').remove();
 });
-
